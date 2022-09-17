@@ -107,6 +107,7 @@ extern int sys_yield(void);
 extern int sys_shutdown(void);
 extern int sys_hello(void);
 extern int sys_getname(void);
+extern int sys_setname(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -133,7 +134,8 @@ static int (*syscalls[])(void) = {
 [SYS_yield] sys_yield,
 [SYS_shutdown] sys_shutdown,
 [SYS_hello] sys_hello,
-[SYS_getname] sys_getname
+[SYS_getname] sys_getname,
+[SYS_setname] sys_setname
 };
 
 void

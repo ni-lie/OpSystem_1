@@ -127,13 +127,12 @@ int sys_setname(void)
 {
   char *name;
 
-  if(argstr(0, &name) < 0 || argstr(0, &name) > 15)
+  if(argstr(0, &name) < 2 || argstr(0, &name) > 16)
   {
     return -1;
   }
 
-  safestrcpy(name, myproc()->name, 16);
+  //safestrcpy(name, myproc()->name, 16);
 
   return strlen(name);
-  
 }
