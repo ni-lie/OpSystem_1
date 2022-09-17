@@ -23,3 +23,5 @@
 #define SYS_yield     22
 #define SYS_shutdown  23
 #define SYS_hello     24
+#define SYS_getname   25
+#define SYS_setname   26

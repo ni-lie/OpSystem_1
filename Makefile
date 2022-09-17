@@ -191,6 +191,9 @@ UPROGS=\
 	_zombie\
         _shutdown\
         _test_hello\
+        _test_getname\
+        _test_setname\
+
 
 
 fs.img: mkfs README $(UPROGS)

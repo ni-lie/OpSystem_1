@@ -27,6 +27,8 @@ int uptime(void);
 int yield(void);
 int shutdown(void);
 int hello(void);
+int getname(char *name);
+int setname(char *name);
 
 // ulib.c
 int stat(const char*, struct stat*);

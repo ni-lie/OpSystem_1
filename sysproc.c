@@ -108,3 +108,32 @@ int sys_hello(void)
   cprintf("Hello from the xv6 kernel!\n");
   return 0;
 }
+
+int sys_getname(void)
+{
+  char *name;
+
+  if (argstr(0, &name) < 0)
+  {
+    return -1;
+  }
+
+  safestrcpy(name, myproc()->name, 16);
+
+  return strlen(name);
+}
+
+int sys_setname(void)
+{
+  char *name;
+
+  if(argstr(0, &name) < 0 || argstr(0, &name) > 15)
+  {
+    return -1;
+  }
+
+  safestrcpy(name, myproc()->name, 16);
+
+  return strlen(name);
+  
+}
