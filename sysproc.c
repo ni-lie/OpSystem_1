@@ -102,3 +102,9 @@ int sys_shutdown(void)
   shutdown();
   return 0;
 }
+
+int sys_hello(void)
+{
+  cprintf("Hello from the xv6 kernel!\n");
+  return 0;
+}
