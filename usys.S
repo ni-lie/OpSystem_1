@@ -34,3 +34,4 @@ SYSCALL(shutdown)
 SYSCALL(hello)
 SYSCALL(getname)
 SYSCALL(setname)
+

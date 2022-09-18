@@ -29,6 +29,7 @@ int shutdown(void);
 int hello(void);
 int getname(char *name);
 int setname(char *name);
+int disable(int n);
 
 // ulib.c
 int stat(const char*, struct stat*);
