@@ -25,4 +25,4 @@
 #define SYS_hello     24
 #define SYS_getname   25
 #define SYS_setname   26
-
+#define SYS_disable   27

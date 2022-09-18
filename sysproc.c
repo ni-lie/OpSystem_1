@@ -132,7 +132,14 @@ int sys_setname(void)
     return -1;
   }
 
-  //safestrcpy(name, myproc()->name, 16);
+  safestrcpy(name, myproc()->name, 16);
 
   return strlen(name);
+}
+
+int sys_disable(int n)
+{
+  //int n;
+  return dis_able(n);
+  //return 0;
 }

@@ -193,6 +193,7 @@ UPROGS=\
         _test_hello\
         _test_getname\
         _test_setname\
+        _test_disable\
 
 
 

@@ -82,6 +82,7 @@ argstr(int n, char **pp)
   return fetchstr(addr, pp);
 }
 
+
 extern int sys_chdir(void);
 extern int sys_close(void);
 extern int sys_dup(void);
@@ -108,7 +109,7 @@ extern int sys_shutdown(void);
 extern int sys_hello(void);
 extern int sys_getname(void);
 extern int sys_setname(void);
-
+extern int sys_disable(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -137,6 +138,7 @@ static int (*syscalls[])(void) = {
 [SYS_hello] sys_hello,
 [SYS_getname] sys_getname,
 [SYS_setname] sys_setname,
+[SYS_disable] sys_disable,
 };
 
 void
@@ -152,5 +154,22 @@ syscall(void)
     cprintf("%d %s: unknown sys call %d\n",
             curproc->pid, curproc->name, num);
     curproc->tf->eax = -1;
+  }
+}
+
+int
+dis_able(int num)
+{
+
+  struct proc *curproc = myproc();
+
+  num = curproc->tf->eax;
+  if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
+
+    syscalls[num] = *syscalls;
+    //syscalls[num] = 0;
+    return 0;
+  } else {
+    return -1;
   }
 }
